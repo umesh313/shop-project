@@ -82,4 +82,7 @@ app.use((req,res,next)=>{
 
 // app.use("",gameRoute)
 app.use("/form",formroute)
+app.use("/*",(req,res,next)=>{
+    res.sendFile(path.join(__dirname,"angular","index.html"))
+  })
 module.exports= app;
