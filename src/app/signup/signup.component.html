@@ -1,0 +1,16 @@
+<h2>Sign up form</h2>
+<form #signupform="ngForm" (submit)="formSubmit(signupform)">
+
+<input type="text" placeholder="enter your name" name="fname" #myname="ngModel" ngModel required> 
+<br>
+<span *ngIf="myname.touched && myname.invalid">please enter your name</span>
+<br>
+<input type="password" placeholder="enter your password" name="password" #mypassword="ngModel" ngModel required>
+<br>
+<span *ngIf="mypassword.touched && mypassword.invalid">please enter your password</span>
+<br>
+<button type="submit" [disabled]="!signupform.valid" >Submit</button>
+
+</form>
+
+

@@ -1,0 +1,17 @@
+<h2>registration form</h2>
+
+
+<form [formGroup]="regForm">
+    <input type="text" placeholder="enter your name" formControlName="regname">
+    <br><br>
+    <input type="email" placeholder="enter your email" formControlName="regemail">
+    <br>
+    <button type="submit" (click)="onSubmit()" [disabled]="regForm.invalid">Submit</button>
+<button routerLink="dashboard">dashboard</button>
+<input type="file" #filepicker formcontrolName=image (change)="onImagepicked($event)" name="" id="">
+<button (click)="filepicker.click()">Pick Image</button>
+<div>
+    <img [src]="onImagePreview" alt="">
+</div>
+</form>
+
